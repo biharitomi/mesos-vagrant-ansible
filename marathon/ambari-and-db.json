@@ -1,0 +1,38 @@
+{
+  "id": "ambari-server",
+  "apps": [{
+		"id": "/ambari-server/db",
+		"cpus": 0.2,
+		"mem": 100.0,
+		"instances": 1,
+		"container": {
+			"type": "DOCKER",
+			"docker": {
+				"image": "postgres:9.4.1",
+				"network": "HOST"
+			}
+		}
+	},
+	{
+		"id": "/ambari-server/web",
+    "dependencies": ["/ambari-server/db"],
+		"cpus": 0.5,
+  	"mem": 200.0,
+		"cmd": "/start-server",
+		"ports": [
+        8080
+    ],
+  	"instances": 1,
+  	"constraints": [["hostname", "UNIQUE", ""]],
+  	"container": {
+    	"type": "DOCKER",
+    	"docker": {
+      	"image": "martonsereg/ambari",
+      	"network": "HOST"
+    	}
+  	},
+		"env": {
+			"POSTGRES_DB": "localhost"
+		}
+	}]
+}

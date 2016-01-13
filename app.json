@@ -1,0 +1,14 @@
+{
+    "id":"/calico-apps",
+    "apps": [
+        {
+            "id": "hello-world-1",
+            "cmd": "ifconfig && sleep 30",
+            "cpus": 0.1,
+            "mem": 64.0,
+            "ipAddress": {
+                "groups": ["my-group-1"]
+            }
+        }
+    ]
+}

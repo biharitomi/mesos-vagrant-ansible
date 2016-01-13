@@ -1,0 +1,21 @@
+{
+    "id":"/calico-apps-docker",
+    "apps": [
+        {
+            "id": "hello-world-1",
+            "cpus": 0.1,
+            "mem": 64.0,
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "outyet",
+      "network": "BRIDGE"
+    },
+            "ipAddress": {
+                "groups": ["my-group-1"]
+            }
+  }
+
+        }
+    ]
+}

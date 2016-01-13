@@ -1,0 +1,5 @@
+.vagrant
+package.box
+ambari.tar.gz
+outyet.tar.gz
+dcos

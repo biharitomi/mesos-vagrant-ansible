@@ -1,0 +1,18 @@
+{
+  "id": "ambari-server-fake",
+  "cpus": 0.5,
+  "mem": 200.0,
+	"cmd": "/start-server",
+	"ports": [
+        8080
+    ],
+  "instances": 1,
+  "constraints": [["hostname", "UNIQUE", ""]],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "martonsereg/ambari",
+      "network": "HOST"
+    }
+  }
+}

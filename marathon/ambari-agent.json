@@ -1,0 +1,18 @@
+{
+  "id": "ambari-agent",
+  "cpus": 1.0,
+  "mem": 600.0,
+	"cmd": "/start-agent",
+	"ports": [
+        8080
+    ],
+  "instances": 2,
+  "constraints": [["hostname", "UNIQUE", ""]],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "martonsereg/ambari",
+      "network": "HOST"
+    }
+  }
+}
