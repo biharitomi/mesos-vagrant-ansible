@@ -38,8 +38,6 @@
         shell: sh /vagrant/installdns.sh
       - name: configure dns
         template: src=./resolv.conf.j2 dest=/etc/resolv.conf
-      - name: install outyet
-        shell: docker load --input=/vagrant/outyet.tar.gz
       - name: configure marathon services
         shell: cd /vagrant/marathon && sh post.sh
       - name: update the rsyslog config
@@ -68,5 +66,3 @@
         service: name=mesos-slave state=started enabled=yes
       - name: start docker
         service: name=docker state=started enabled=yes
-      - name: install outyet
-        shell: docker load --input=/vagrant/outyet.tar.gz

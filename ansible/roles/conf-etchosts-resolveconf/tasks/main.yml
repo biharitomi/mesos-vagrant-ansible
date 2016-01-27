@@ -1,0 +1,5 @@
+---
+- name: update hosts file
+  template: src=hosts.j2 dest=/etc/hosts backup=yes
+- name: configure resolve.conf
+  template: src=resolv.conf.j2 dest=/etc/resolv.conf backup=yes

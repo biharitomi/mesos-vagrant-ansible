@@ -1,0 +1,3 @@
+ {% for host in groups['master'] %}
+nameserver {{ hostvars[host]['ansible_ssh_host'] }}
+{% endfor %}

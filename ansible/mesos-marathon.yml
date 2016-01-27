@@ -1,0 +1,20 @@
+- name: Configure vms hosts file and resolve conf
+  hosts: all
+  become: yes
+  become_method: sudo
+  roles:
+   - conf-etchosts-resolveconf
+
+- name: Provision Master nodes
+  hosts: master
+  become: yes
+  become_method: sudo
+  roles:
+   - mesos-master
+
+- name: Provision Slave nodes
+  hosts: slave
+  become: yes
+  become_method: sudo
+  roles:
+   - mesos-slave
