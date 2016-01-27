@@ -7,7 +7,7 @@
   yum: pkg=zookeeper,zookeeper-server state=present
 - name: configure zookeeper ID
   become_user: zookeeper
-  shell: zookeeper-server-initialize --myid=1
+  shell: zookeeper-server-initialize --force --myid=1
 - name: install mesos, marathon, chronos, and docker packages
   yum: pkg=device-mapper-event-libs,mesos,marathon,chronos,docker state=present
 - name: configure containerizers
@@ -26,8 +26,6 @@
   service: name=docker state=started enabled=yes
 - name: install go, git, and dnsutil packages
   yum: pkg=golang,git,bind-utils state=present
-- name: configure marathon services
-  shell: cd /vagrant/marathon && sh post.sh
 - name: update the rsyslog config
   template: src=mesos.conf.j2 dest=/etc/rsyslog.d/mesos.conf backup=yes
 - name: restart rsyslog
