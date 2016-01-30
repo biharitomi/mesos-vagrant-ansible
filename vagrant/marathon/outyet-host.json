@@ -10,7 +10,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "outyet",
+      "image": "goexample/outyet",
       "network": "HOST"
     }
   }
