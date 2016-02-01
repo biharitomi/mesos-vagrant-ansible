@@ -5,6 +5,8 @@ mesos-master ansible_ssh_host=172.16.252.31 ansible_ssh_user=centos ansible_ssh_
 mesos-slave1 ansible_ssh_host=172.16.252.33 ansible_ssh_user=centos ansible_ssh_port=22 private_ip=192.168.44.99
 mesos-slave2 ansible_ssh_host=172.16.252.37 ansible_ssh_user=centos ansible_ssh_port=22 private_ip=192.168.44.100
 mesos-slave3 ansible_ssh_host=172.16.252.40 ansible_ssh_user=centos ansible_ssh_port=22 private_ip=192.168.44.101
+mesos-slave4 ansible_ssh_host=172.16.252.43 ansible_ssh_user=centos ansible_ssh_port=22 private_ip=192.168.44.102
+mesos-slave5 ansible_ssh_host=172.16.252.47 ansible_ssh_user=centos ansible_ssh_port=22 private_ip=192.168.44.103
 
 [mesos-cluster-groups:children]
 master
