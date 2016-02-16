@@ -1,5 +1,14 @@
 ---
 - name: update hosts file
   template: src=hosts.j2 dest=/etc/hosts backup=yes
+
+- name: install nscd
+  sudo: true
+  yum: pkg=nscd state=present
+
+- name: start and enable nscd daemon
+  sudo: true
+  service: name=nscd state=started enabled=yes
+
 #- name: configure resolve.conf
 #  template: src=resolv.conf.j2 dest=/etc/resolv.conf backup=yes
