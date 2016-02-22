@@ -10,5 +10,9 @@
   sudo: true
   service: name=nscd state=started enabled=yes
 
+- name: set selinux to permissive state
+  sudo: true
+  selinux: policy=targeted state=permissive
+
 #- name: configure resolve.conf
 #  template: src=resolv.conf.j2 dest=/etc/resolv.conf backup=yes
